@@ -1,0 +1,31 @@
+# Delphi files to ignore
+*.dcu
+*.~*
+*.local
+*.identcache
+*.tvsconfig
+__history/
+__recovery/
+*.dsk
+*.map
+*.stat
+*.exe
+*.dll
+*.bpl
+*.dcp
+*.tmp
+*.log
+*.obj
+
+# Output folders
+Win32/Debug/
+Win32/Release/
+Win64/Debug/
+Win64/Release/
+
+# Backup
+Backup/
+*.bak
+
+# VS Code
+.vscode/
