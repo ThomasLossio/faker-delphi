@@ -179,10 +179,10 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="..\src\Faker.pas"/>
-        <DCCReference Include="..\src\Definitions\PersonData.pas"/>
-        <DCCReference Include="..\src\Types\Person.pas"/>
-        <DCCReference Include="..\src\Definitions\JobData.pas"/>
-        <DCCReference Include="..\src\Types\Job.pas"/>
+        <DCCReference Include="..\src\Data\JobData.pas"/>
+        <DCCReference Include="..\src\Data\PersonData.pas"/>
+        <DCCReference Include="..\src\Modules\Job.pas"/>
+        <DCCReference Include="..\src\Modules\Person.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

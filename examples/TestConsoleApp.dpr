@@ -7,10 +7,10 @@ program TestConsoleApp;
 uses
   System.SysUtils,
   Faker in '..\src\Faker.pas',
-  PersonData in '..\src\Definitions\PersonData.pas',
-  Person in '..\src\Types\Person.pas',
-  JobData in '..\src\Definitions\JobData.pas',
-  Job in '..\src\Types\Job.pas';
+  JobData in '..\src\Data\JobData.pas',
+  PersonData in '..\src\Data\PersonData.pas',
+  Job in '..\src\Modules\Job.pas',
+  Person in '..\src\Modules\Person.pas';
 
 begin
   try
