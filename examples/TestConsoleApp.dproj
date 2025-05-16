@@ -181,8 +181,10 @@
         <DCCReference Include="..\src\Faker.pas"/>
         <DCCReference Include="..\src\Data\JobData.pas"/>
         <DCCReference Include="..\src\Data\PersonData.pas"/>
-        <DCCReference Include="..\src\Modules\Job.pas"/>
-        <DCCReference Include="..\src\Modules\Person.pas"/>
+        <DCCReference Include="..\src\Modules\JobModule.pas"/>
+        <DCCReference Include="..\src\Modules\PersonModule.pas"/>
+        <DCCReference Include="..\src\Models\PersonModel.pas"/>
+        <DCCReference Include="..\src\Factories\PersonFactory.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
