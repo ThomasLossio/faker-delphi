@@ -12,10 +12,15 @@ uses
   JobModule in '..\src\Modules\JobModule.pas',
   PersonModule in '..\src\Modules\PersonModule.pas',
   PersonModel in '..\src\Models\PersonModel.pas',
-  PersonFactory in '..\src\Factories\PersonFactory.pas';
+  PersonFactory in '..\src\Factories\PersonFactory.pas',
+  LocationData in '..\src\Data\LocationData.pas',
+  LocationModule in '..\src\Modules\LocationModule.pas',
+  StateData in '..\src\Data\StateData.pas',
+  CityData in '..\src\Data\CityData.pas';
 
 var
   P: TPerson;
+  state: TStateAbbr;
 
 begin
   try
@@ -55,6 +60,29 @@ begin
     Writeln('Marital Status: ', P.MaritalStatus);
     Writeln('Job Title: ', P.JobTitle);
     Writeln;
+
+    Writeln('=== LOCATION DATA ===');
+    Writeln('Address Prefix: ', RandomAddressPrefix);
+    Writeln('Address Suffix: ', RandomAddressSuffix);
+    Writeln('Address Number Suffix: ', RandomAddressNumberSuffix);
+    Writeln('Neighborhood: ', RandomNeighborhood);
+    Writeln('Address Complement: ', RandomAddressComplement);
+    Writeln;
+
+    Writeln('=== STATE AND CITY ===');
+    State := RandomState;
+    Writeln('Random State: ', State.State, ' (', State.Abbr, ')');
+    Writeln('Random City (any): ', RandomCity);
+    Writeln('Random City by State (name): ', RandomCityByState('Bahia'));
+    Writeln('Random City by State (abbr): ', RandomCityByState('SP'));
+    Writeln('Random City by State (unknown): ', RandomCityByState('XX'));
+    Writeln;
+
+    Writeln('=== COUNTRY AND NATIONALITY ===');
+    Writeln('Random Country: ', RandomCountries);
+    Writeln('Random Nationality: ', RandomNationalities);
+    Writeln;
+
 
     Writeln
   except

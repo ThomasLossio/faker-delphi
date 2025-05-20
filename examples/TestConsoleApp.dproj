@@ -185,6 +185,10 @@
         <DCCReference Include="..\src\Modules\PersonModule.pas"/>
         <DCCReference Include="..\src\Models\PersonModel.pas"/>
         <DCCReference Include="..\src\Factories\PersonFactory.pas"/>
+        <DCCReference Include="..\src\Data\LocationData.pas"/>
+        <DCCReference Include="..\src\Modules\LocationModule.pas"/>
+        <DCCReference Include="..\src\Data\StateData.pas"/>
+        <DCCReference Include="..\src\Data\CityData.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
