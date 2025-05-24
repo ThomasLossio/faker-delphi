@@ -16,11 +16,14 @@ uses
   LocationData in '..\src\Data\LocationData.pas',
   LocationModule in '..\src\Modules\LocationModule.pas',
   StateData in '..\src\Data\StateData.pas',
-  CityData in '..\src\Data\CityData.pas';
+  CityData in '..\src\Data\CityData.pas',
+  CityModule in '..\src\Modules\CityModule.pas',
+  StateModule in '..\src\Modules\StateModule.pas',
+  StateModel in '..\src\Models\StateModel.pas';
 
 var
   P: TPerson;
-  state: TStateAbbr;
+  FullState: TStateAbbr;
 
 begin
   try
@@ -67,22 +70,21 @@ begin
     Writeln('Address Number Suffix: ', RandomAddressNumberSuffix);
     Writeln('Neighborhood: ', RandomNeighborhood);
     Writeln('Address Complement: ', RandomAddressComplement);
-    Writeln;
-
-    Writeln('=== STATE AND CITY ===');
-    State := RandomState;
-    Writeln('Random State: ', State.State, ' (', State.Abbr, ')');
-    Writeln('Random City (any): ', RandomCity);
-    Writeln('Random City by State (name): ', RandomCityByState('Bahia'));
-    Writeln('Random City by State (abbr): ', RandomCityByState('SP'));
-    Writeln('Random City by State (unknown): ', RandomCityByState('XX'));
-    Writeln;
-
-    Writeln('=== COUNTRY AND NATIONALITY ===');
     Writeln('Random Country: ', RandomCountries);
     Writeln('Random Nationality: ', RandomNationalities);
     Writeln;
 
+    Writeln('=== STATE AND CITY ===');
+    FullState := RandomFullState;
+    Writeln('Random State: ', FullState.State, ' (', FullState.Abbr, ')');
+    Writeln('Random State: ', RandomState);
+    Writeln('Random State Abbr: ', RandomStateAbbr);
+    Writeln('Random City (any): ', RandomCity);
+    Writeln('Random City by State (name): ', RandomCityByState('Bahia'));
+    Writeln('Random City by State (abbr): ', RandomCityByState('SP'));
+    Writeln('Random City by State (unknown): ', RandomCityByState('XX'));
+    Writeln('Random Full Address (abbr): ', RandomFullAddress());
+    Writeln('Random Full Address (state): ', RandomFullAddress(false));
 
     Writeln
   except

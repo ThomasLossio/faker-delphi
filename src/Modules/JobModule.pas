@@ -7,8 +7,7 @@ function RandomJobTitle(IsMale: Boolean): string;
 implementation
 
 uses
-  System.SysUtils,
-  JobData;
+  System.SysUtils, JobData;
 
 function RandomJobTitle(IsMale: Boolean): string;
 var

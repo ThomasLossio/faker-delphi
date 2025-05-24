@@ -10,8 +10,7 @@ function RandomMaritalStatus(IsMale: Boolean = True): string;
 implementation
 
 uses
-  System.SysUtils,
-  PersonData;
+  System.SysUtils, PersonData;
 
 function RandomFirstName(IsMale: Boolean): string;
 begin

@@ -21,9 +21,7 @@ type
 implementation
 
 uses
-  System.SysUtils,
-  PersonModule,
-  JobModule;
+  System.SysUtils, PersonModule, JobModule;
 
 class function TFaker.FirstName(IsMale: Boolean): string;
 begin
