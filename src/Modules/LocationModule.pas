@@ -15,7 +15,8 @@ function RandomNationalities(): string;
 implementation
 
 uses
-  System.SysUtils, LocationData, StateModel, StateModule, CityModule;
+  System.SysUtils, LocationData, StateModel, StateModule, CityModule,
+  ZipCodeModule;
 
 
 function RandomAddressPrefix(): string;
@@ -84,6 +85,8 @@ begin
     Result := Result + '/' + State.Abbr
   else
     Result := Result + '/' + State.State;
+
+  Result := Result + ', ' + RandomZipCodeByState(State.Abbr);
 end;
 
 end.

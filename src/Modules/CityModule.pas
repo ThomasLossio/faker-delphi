@@ -8,7 +8,8 @@ function RandomCityByState(StateNameOrAbbr: String): string;
 implementation
 
 uses
-  System.SysUtils, System.Generics.Collections, CityData, StateData, StateModel;
+  System.SysUtils, System.Generics.Collections, CityData, StateData, StateModel,
+  StateHelper;
 
 var
   CityFuncMap: TDictionary<string, TFunc<string>>;
@@ -160,7 +161,7 @@ function RandomCityByState(StateNameOrAbbr: String): string;
 var
   Func: TFunc<string>;
 begin
-  if CityFuncMap.TryGetValue(StateNameOrAbbr.ToUpper, Func) then
+  if CityFuncMap.TryGetValue(NormalizeState(StateNameOrAbbr).ToUpper, Func) then
     Result := Func()
   else
     Result := 'Estado não encontrado';
@@ -171,85 +172,32 @@ initialization
   CityFuncMap := TDictionary<string, TFunc<string>>.Create;
 
   CityFuncMap.Add('AC', RandomAcreCity);
-  CityFuncMap.Add('ACRE', RandomAcreCity);
-
   CityFuncMap.Add('AL', RandomAlagoasCity);
-  CityFuncMap.Add('ALAGOAS', RandomAlagoasCity);
-
   CityFuncMap.Add('AP', RandomAmapaCity);
-  CityFuncMap.Add('AMAPÁ', RandomAmapaCity);
-
   CityFuncMap.Add('AM', RandomAmazonasCity);
-  CityFuncMap.Add('AMAZONAS', RandomAmazonasCity);
-
   CityFuncMap.Add('BA', RandomBahiaCity);
-  CityFuncMap.Add('BAHIA', RandomBahiaCity);
-
   CityFuncMap.Add('CE', RandomCearaCity);
-  CityFuncMap.Add('CEARÁ', RandomCearaCity);
-
   CityFuncMap.Add('DF', RandomDistritoFederalCity);
-  CityFuncMap.Add('DISTRITO FEDERAL', RandomDistritoFederalCity);
-
   CityFuncMap.Add('ES', RandomEspiritoSantoCity);
-  CityFuncMap.Add('ESPÍRITO SANTO', RandomEspiritoSantoCity);
-
   CityFuncMap.Add('GO', RandomGoiasCity);
-  CityFuncMap.Add('GOIÁS', RandomGoiasCity);
-
   CityFuncMap.Add('MA', RandomMaranhaoCity);
-  CityFuncMap.Add('MARANHÃO', RandomMaranhaoCity);
-
   CityFuncMap.Add('MT', RandomMatoGrossoCity);
-  CityFuncMap.Add('MATO GROSSO', RandomMatoGrossoCity);
-
   CityFuncMap.Add('MS', RandomMatoGrossoDoSulCity);
-  CityFuncMap.Add('MATO GROSSO DO SUL', RandomMatoGrossoDoSulCity);
-
   CityFuncMap.Add('MG', RandomMinasGeraisCity);
-  CityFuncMap.Add('MINAS GERAIS', RandomMinasGeraisCity);
-
   CityFuncMap.Add('PA', RandomParaCity);
-  CityFuncMap.Add('PARÁ', RandomParaCity);
-
   CityFuncMap.Add('PB', RandomParaibaCity);
-  CityFuncMap.Add('PARAÍBA', RandomParaibaCity);
-
   CityFuncMap.Add('PR', RandomParanaCity);
-  CityFuncMap.Add('PARANÁ', RandomParanaCity);
-
   CityFuncMap.Add('PE', RandomPernambucoCity);
-  CityFuncMap.Add('PERNAMBUCO', RandomPernambucoCity);
-
   CityFuncMap.Add('PI', RandomPiauiCity);
-  CityFuncMap.Add('PIAUÍ', RandomPiauiCity);
-
   CityFuncMap.Add('RJ', RandomRioDeJaneiroCity);
-  CityFuncMap.Add('RIO DE JANEIRO', RandomRioDeJaneiroCity);
-
   CityFuncMap.Add('RN', RandomRioGrandeDoNorteCity);
-  CityFuncMap.Add('RIO GRANDE DO NORTE', RandomRioGrandeDoNorteCity);
-
   CityFuncMap.Add('RS', RandomRioGrandeDoSulCity);
-  CityFuncMap.Add('RIO GRANDE DO SUL', RandomRioGrandeDoSulCity);
-
   CityFuncMap.Add('RO', RandomRondoniaCity);
-  CityFuncMap.Add('RONDÔNIA', RandomRondoniaCity);
-
   CityFuncMap.Add('RR', RandomRoraimaCity);
-  CityFuncMap.Add('RORAIMA', RandomRoraimaCity);
-
   CityFuncMap.Add('SC', RandomSantaCatarinaCity);
-  CityFuncMap.Add('SANTA CATARINA', RandomSantaCatarinaCity);
-
   CityFuncMap.Add('SP', RandomSaoPauloCity);
-  CityFuncMap.Add('SÃO PAULO', RandomSaoPauloCity);
-
   CityFuncMap.Add('SE', RandomSergipeCity);
-  CityFuncMap.Add('SERGIPE', RandomSergipeCity);
-
   CityFuncMap.Add('TO', RandomTocantinsCity);
-  CityFuncMap.Add('TOCANTINS', RandomTocantinsCity);
 
 finalization
 

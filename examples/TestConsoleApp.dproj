@@ -192,6 +192,9 @@
         <DCCReference Include="..\src\Modules\CityModule.pas"/>
         <DCCReference Include="..\src\Modules\StateModule.pas"/>
         <DCCReference Include="..\src\Models\StateModel.pas"/>
+        <DCCReference Include="..\src\Models\ZipCodeModel.pas"/>
+        <DCCReference Include="..\src\Modules\ZipCodeModule.pas"/>
+        <DCCReference Include="..\src\Utils\StateHelper.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

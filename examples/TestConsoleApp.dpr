@@ -19,7 +19,10 @@ uses
   CityData in '..\src\Data\CityData.pas',
   CityModule in '..\src\Modules\CityModule.pas',
   StateModule in '..\src\Modules\StateModule.pas',
-  StateModel in '..\src\Models\StateModel.pas';
+  StateModel in '..\src\Models\StateModel.pas',
+  ZipCodeModel in '..\src\Models\ZipCodeModel.pas',
+  ZipCodeModule in '..\src\Modules\ZipCodeModule.pas',
+  StateHelper in '..\src\Utils\StateHelper.pas';
 
 var
   P: TPerson;
@@ -83,10 +86,14 @@ begin
     Writeln('Random City by State (name): ', RandomCityByState('Bahia'));
     Writeln('Random City by State (abbr): ', RandomCityByState('SP'));
     Writeln('Random City by State (unknown): ', RandomCityByState('XX'));
+    Writeln('Random Zip Code (any): ', RandomZipCode);
+    Writeln('Random Zip Code by State (name): ', RandomZipCodeByState('Ceará'));
+    Writeln('Random Zip Code by State (abbr): ', RandomZipCodeByState('RS'));
+    Writeln('Random Zip Code by State (unknown): ', RandomZipCodeByState('XX'));
     Writeln('Random Full Address (abbr): ', RandomFullAddress());
     Writeln('Random Full Address (state): ', RandomFullAddress(false));
 
-    Writeln
+    Writeln;
   except
     on E: Exception do
       Writeln(E.ClassName, ': ', E.Message);
