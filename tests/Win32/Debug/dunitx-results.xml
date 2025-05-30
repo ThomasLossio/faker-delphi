@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<test-results name="D:\dsv\codes\Delphi\faker-delphi\tests\Win32\Debug\FakerDelphiTest.exe" total="6" errors="0" failures="0" ignored="0" inconclusive="0" not-run="0" skipped="0" invalid="0" date="2025-05-30" time="0.002">
+  <culture-info current-culture="en" current-uiculture="en" />
+  <test-suite type="Assembly" name="FakerDelphiTest.exe" executed="true" result="Success" success="True" time="0.002" asserts="0">
+    <results>
+        <test-suite type="Namespace" name="CityModuleTests" executed="true" result="Success" success="True" time="0.002" asserts="0" >
+          <results>
+              <test-suite type="Fixture" name="TCityModuleTests" executed="True" result="Success" success="True" time="0.002" >
+                <results>
+                  <test-case name="TesteRandomCity" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="TestRandomCityByState.Should be able to get Random Acre City" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="TestRandomCityByState.Should be able to get Random Ceará City" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="TestRandomCityByState.Should be able to get Random Paraíba City" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="TestRandomCityByState.Should be able to get Random Tocantins City" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="TestRandomCityByInvalidState" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+          </results>
+        </test-suite>
+    </results>
+  </test-suite>
+</test-results>

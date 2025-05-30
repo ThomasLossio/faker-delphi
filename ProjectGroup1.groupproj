@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{D4A1E6DE-7B76-4888-B593-AAB2931FE637}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="examples\TestConsoleApp.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="tests\FakerDelphiTest.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TestConsoleApp">
+        <MSBuild Projects="examples\TestConsoleApp.dproj"/>
+    </Target>
+    <Target Name="TestConsoleApp:Clean">
+        <MSBuild Projects="examples\TestConsoleApp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestConsoleApp:Make">
+        <MSBuild Projects="examples\TestConsoleApp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FakerDelphiTest">
+        <MSBuild Projects="tests\FakerDelphiTest.dproj"/>
+    </Target>
+    <Target Name="FakerDelphiTest:Clean">
+        <MSBuild Projects="tests\FakerDelphiTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FakerDelphiTest:Make">
+        <MSBuild Projects="tests\FakerDelphiTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TestConsoleApp;FakerDelphiTest"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TestConsoleApp:Clean;FakerDelphiTest:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TestConsoleApp:Make;FakerDelphiTest:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

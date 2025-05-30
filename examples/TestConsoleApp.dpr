@@ -22,7 +22,8 @@ uses
   StateModel in '..\src\Models\StateModel.pas',
   ZipCodeModel in '..\src\Models\ZipCodeModel.pas',
   ZipCodeModule in '..\src\Modules\ZipCodeModule.pas',
-  StateHelper in '..\src\Utils\StateHelper.pas';
+  StateHelper in '..\src\Utils\StateHelper.pas',
+  CityMapHelper in '..\src\Utils\CityMapHelper.pas';
 
 var
   P: TPerson;
